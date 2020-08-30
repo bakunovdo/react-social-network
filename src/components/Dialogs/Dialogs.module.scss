@@ -1,0 +1,70 @@
+.pageDialogs {
+  display: flex;
+  background: white;
+  width: 100%;
+  height: 800px;
+  max-height: 800px;
+}
+
+.dialogs {
+  width: 320px;
+  position: relative;
+}
+
+.dialogs:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  background: #c4c4c7;;
+}
+
+.chat {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-self: flex-end;
+  height: 100%;
+
+  .messages {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 10px;
+    height: 100%;
+    overflow: scroll;
+  }
+
+  .sendMessage {
+    background: #858dbb25;
+    display: flex;
+    padding: 15px 10px;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+
+    height: auto;
+
+    textarea {
+      font-size: 14px;
+      padding: 10px 100px 10px 13px;
+
+      flex-grow: 1;
+
+      border: 1px solid #c4c4c7;
+      border-radius: 5px;
+      overflow: auto;
+      height: max-content;
+    }
+    button {
+      position: absolute;
+      right: 35px;
+      border-radius: 20px;
+      color: #fff;
+      background: #47a77f;
+      font-size: 14px;
+      padding: 5px 15px;
+    }
+  }
+}

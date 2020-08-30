@@ -1,0 +1,67 @@
+.ProfilePerson {
+  .profile-header {
+    height: 100px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    background-color: var(--background-block);
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .profile {
+    box-sizing: content-box;
+    height: 200px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    background: var(--background-block);
+    border-radius: 0 0 5px 5px;
+
+    &__img {
+      height: 200px;
+      width: 200px;
+      margin-right: 20px;
+      img {
+        border-radius: 5px;
+      }
+    }
+
+    .wrapper {
+      flex-grow: 1;
+    }
+
+    .row {
+      display: block;
+    }
+
+
+    &-name {
+      font-size: 24px;
+      font-weight: bold;
+      width: 100%;
+    }
+
+    &-info {
+      font-size: 16px;
+
+      div {
+        display: inline-block;
+        padding: 5px 0;
+      }
+
+      div.text-about {
+        width: 100px;
+        color: var(--text-about);
+      }
+
+      div.text-value {
+        color: var(--text-value);
+      }
+    }
+  }
+
+}

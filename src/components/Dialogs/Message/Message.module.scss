@@ -1,0 +1,18 @@
+.message {
+  padding: 10px 30px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border-radius: 10px;
+}
+
+.me {
+  background: #858dbb;
+  align-self: flex-end;
+}
+
+.notMe {
+  background: #b87fb1;
+  align-self: flex-start;
+}

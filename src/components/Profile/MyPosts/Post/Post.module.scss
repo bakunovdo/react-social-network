@@ -1,0 +1,19 @@
+.post {
+  display: flex;
+  margin-bottom: 20px;
+
+  padding: 10px;
+  background: var(--background-block);
+  border-radius: 5px;
+
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+
+  span {
+    padding-top: 10px;
+    padding-left: 15px;
+  }
+}

@@ -1,0 +1,26 @@
+  .header {
+    height: 50px;
+    margin-bottom: 20px;
+    background: var(--header);
+
+    .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+
+
+      span {
+        margin-left: 5px;
+        color: white;
+        font-size: 18px;
+        line-height: 20px;
+      }
+    }
+
+    img {
+      margin-left: 10px;
+      padding: 10px;
+      height: 100%;
+      object-fit: scale-down;
+    }
+  }
