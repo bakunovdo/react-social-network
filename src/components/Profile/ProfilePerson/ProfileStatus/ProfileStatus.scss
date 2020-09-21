@@ -1,0 +1,30 @@
+.profile-person {
+  .status {
+    margin-top: 10px;
+    min-width: 100px;
+    border-radius: 4px;
+    height: 16px;
+    position: relative;
+
+    & > span {
+      display: block;
+    }
+
+    &:hover {
+      background-color: rgba(201, 201, 201, 0.4);
+    }
+  }
+
+  .editStatusBlock {
+    position: absolute;
+    top: -25px;
+    width: 500px;
+    padding: 20px;
+
+    & > button {
+      margin-top: 10px;
+      border-radius: 5px;
+      padding: 10px 15px;
+    }
+  }
+}

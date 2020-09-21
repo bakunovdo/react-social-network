@@ -1,67 +1,70 @@
-.ProfilePerson {
-  .profile-header {
-    height: 100px;
-    width: 100%;
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
-    background-color: var(--background-block);
+@import "../../../styles/variables";
+
+.profile-person {
+  position: relative;
+  height: 100%;
+  display: flex;
+  z-index: 5;
+  margin-bottom: 20px;
+
+  &__picture {
+    position: absolute;
+    background: var(--background-default);
+    width: $avatarSize + $avatarBorder;
+    height: $avatarSize + $avatarBorder;
+    left: $offset;
+    top: -$avatarSize / 2;
+    transform: translateX($offset);
+    border-radius: $avatarRadius;
+    padding: $avatarBorder / 2;
+
     img {
+      width: $avatarSize;
+      height: $avatarSize;
+      border-radius: inherit;
+    }
+  }
+
+  &__header {
+    margin-top: 5px;
+    width: 100%;
+    height: $avatarSize / 2;
+    margin-left: $offset + $avatarSize/2 + $avatarBorder;
+    padding-left: $avatarSize/2;
+    background: #fff;
+
+    .info {
+      display: flex;
+      justify-content: space-between;
       height: 100%;
-      width: 100%;
-      object-fit: cover;
-    }
-  }
+      padding: 10px;
 
-  .profile {
-    box-sizing: content-box;
-    height: 200px;
-    padding: 15px;
-    margin-bottom: 20px;
-    display: flex;
-    background: var(--background-block);
-    border-radius: 0 0 5px 5px;
+      .nameAbout {
+        max-width: 350px;
 
-    &__img {
-      height: 200px;
-      width: 200px;
-      margin-right: 20px;
-      img {
-        border-radius: 5px;
-      }
-    }
+        .fullName {
+          font-size: 22px;
+          font-weight: 700;
+          color: #333333;
+          text-transform: capitalize;
+          position: relative;
 
-    .wrapper {
-      flex-grow: 1;
-    }
-
-    .row {
-      display: block;
-    }
-
-
-    &-name {
-      font-size: 24px;
-      font-weight: bold;
-      width: 100%;
-    }
-
-    &-info {
-      font-size: 16px;
-
-      div {
-        display: inline-block;
-        padding: 5px 0;
+          &:after {
+            content: "";
+            width: 40px;
+            height: 1px;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            background: #dc4734;
+          }
+        }
       }
 
-      div.text-about {
-        width: 100px;
-        color: var(--text-about);
-      }
-
-      div.text-value {
-        color: var(--text-value);
+      .editProfile {
+        margin-right: 10px;
+        align-self: center;
       }
     }
   }
-
 }

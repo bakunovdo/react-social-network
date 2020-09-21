@@ -1,0 +1,54 @@
+$avatarSize: 96px;
+
+.userItem {
+  min-width: 200px;
+  max-width: 200px;
+
+  margin-bottom: 25px;
+  background: white;
+  box-shadow: 0 1px 5px 0 rgba(51, 51, 51, 0.2);
+
+  &__inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+
+    .userItem-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      position: relative;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+
+      .profile-name {
+        margin-left: 15px;
+        font-weight: 600;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .footer {
+      align-self: center;
+
+      button.follow {
+        background: #22a222;
+      }
+
+      button.unfollow {
+        background: #c44444;
+      }
+
+      button.inFollowing {
+        opacity: 0.4;
+      }
+
+    }
+  }
+}

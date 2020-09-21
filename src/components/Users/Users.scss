@@ -1,0 +1,66 @@
+@import "../../styles/variables";
+
+.Users {
+  .header__inner {
+    display: flex;
+    padding: 10px;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    .leftSide {
+      min-width: 200px;
+    }
+
+    .user-search {
+      position: relative;
+      display: flex;
+      align-items: center;
+      input[type=text] {
+        box-sizing: border-box;
+        border: none;
+        width: 100%;
+        height: 100%;
+        padding: 3px;
+        position: relative;
+        border-bottom: 1px solid #000;        &:focus {
+          border-bottom: 1px solid #dc4734;
+        }
+      }
+
+      .search-btn {
+        top: -3px;
+        right: 3px;
+        font-size: 20px;
+        position: absolute;
+        color: #333333;
+        padding: 0;
+        background: none;
+      }
+    }
+  }
+
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    overflow: auto hidden;
+
+    span {
+      margin-right: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .userList {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 15px;
+    min-width: 500px;
+    height: fit-content;
+    justify-content: space-between;
+  }
+}

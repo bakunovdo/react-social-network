@@ -1,6 +1,6 @@
 import React from "react"
 
-const AnimatedLoading = (props) => {
+const Preloader = () => {
   return (
       <svg xmlns="http://www.w3.org/2000/svg"
            style={{margin: "auto", background: "#EBEBEB", display: "block"}}
@@ -13,7 +13,7 @@ const AnimatedLoading = (props) => {
           <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1"
     values="0 50 50;360 50 50"/>
         </circle>
-        <circle cx="50" cy="50" r="34" stroke-width="5" stroke="#f8b26a"
+        <circle cx="50" cy="50" r="34" strokeWidth="5" stroke="#f8b26a"
                 strokeDasharray="53.40707511102649 53.40707511102649" strokeDashoffset="53.40707511102649" fill="none"
                 strokeLinecap="round">
           <animateTransform attributeName="transform" type="rotate" dur="1s" repeatCount="indefinite" keyTimes="0;1"
@@ -23,4 +23,4 @@ const AnimatedLoading = (props) => {
   )
 }
 
-export default AnimatedLoading
+export default Preloader

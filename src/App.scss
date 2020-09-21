@@ -1,11 +1,39 @@
 .container {
-  max-width: 1170px;
+  max-width: 1200px;
+  min-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
-  display: flex;
   position: relative;
 }
 
+.profile-background {
+  line-height: 0;
+
+  img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.profile-thumb {
+  img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+}
+.posted-author {
+  margin-left: 20px;
+
+  .author {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+}
 
 
 

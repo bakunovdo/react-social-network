@@ -1,26 +1,22 @@
 import MyPosts from "./MyPosts";
-import {addPostAC, updateNewPostTextAC} from "../../../redux/actions";
 import {connect} from "react-redux";
+import {addPost} from "../../../redux/profilePageReducer";
 
 const mapState = (state) => {
   return {
-    posts: state.profilePage.posts,
-    inputPost: state.profilePage.newPostText
+    posts: state.profilePage.posts
   }
 }
 
-const mapDispatch = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     addPost: (text) => {
-      dispatch(addPostAC({message: text}))
-    },
-    updateNewPostText: (text) => {
-      dispatch(updateNewPostTextAC({message: text}))
+      dispatch(addPost(text))
     }
   }
 }
 
-const MyPostsContainer = connect(mapState, mapDispatch)(MyPosts)
+const MyPostsContainer = connect(mapState, mapDispatchToProps)(MyPosts)
 
 export default MyPostsContainer
 

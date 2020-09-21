@@ -1,28 +1,26 @@
 import Dialogs from "./Dialogs";
-import {changeTextMessageAC, sendMessageAC} from "../../redux/actions";
+import {sendMessageAC} from "../../redux/actions";
 import {connect} from "react-redux";
+import {withAuthRedirect} from "../../HOC/withAuthRedirect";
+import {compose} from "redux";
 
-let mapState = (state) => {
-  return {
-    state: state.dialogsPage,
-  }
-}
-
-let mapDispatch = (dispatch) => {
-  return {
-    sendMessage: (text) => {
-      dispatch(sendMessageAC({
-        message: text
-      }))
-    },
-    changeTextMessage: (text) => {
-      dispatch(changeTextMessageAC({
-        message: text
-      }))
+let mapStateToProps = (state) => {
+    return {
+        state: state.dialogsPage
     }
-  }
 }
 
-const DialogsContainer = connect(mapState, mapDispatch)(Dialogs)
+let mapDispatchToProps = (dispatch) => {
+    return {
+        sendMessage: (text) => {
+            dispatch(sendMessageAC({
+                message: text
+            }))
+        }
+    }
+}
 
-export default DialogsContainer
+const ComposedComponent = compose(withAuthRedirect, connect(mapStateToProps, mapDispatchToProps))(Dialogs)
+
+
+export default ComposedComponent

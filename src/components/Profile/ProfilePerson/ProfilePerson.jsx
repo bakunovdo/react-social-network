@@ -2,45 +2,41 @@ import React from 'react';
 
 import "./ProfilePerson.scss";
 
-const ProfilePerson = () => {
+// import ProfileStatus from "./ProfileStatus/ProfileStatus";
+
+import Skeleton from "@material-ui/lab/Skeleton";
+import userPlaceholder from "../../../assets/images/userPlaceholder.jpg";
+import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
+
+
+export const ProfilePerson = (props) => {
+
+    const isPhoto =  props.profile && props.profile?.photos.large
+        ? props.profile.photos.large
+        : userPlaceholder
+
+
     return (
-        <div className="ProfilePerson">
-            <div className="profile-header">
-                <img
-                    src="https://picsum.photos/1200/200"
-                    alt=""/>
-            </div>
-
-            <div className="profile">
-
-                <div className="profile__img">
-                    <img src="https://picsum.photos/200" alt=""/>
+        <div className="container profile-person">
+            <div className="profile-person__header">
+                <div className="profile-person__picture">
+                    {props.isLoading ? <Skeleton variant="circle" width={150} height={150}/>
+                        : <img src={isPhoto} alt="profile_pic"/>}
                 </div>
-                <div className="wrapper">
-                    <div className="profile-name">Bakunov Danila</div>
-                    <hr/>
-                    <div className="profile-info">
-                        <div className="profile-info-birthday row">
-                            <div className="text-about">Birthday:</div>
-                            <div className="text-value">15 Jule</div>
+
+                <div className="info">
+                    <div className="nameAbout">
+                        <div className="fullName">
+                            {props.isLoading ? <Skeleton variant="text" width={150} height={20}/> : props.profile.fullName}
                         </div>
-                        <div className="profile-info-city row">
-                            <div className="text-about">City:</div>
-                            <div className="text-value">Moscow</div>
-                        </div>
-                        <div className="profile-info-education row">
-                            <div className="text-about">Studied at:</div>
-                            <div className="text-value">MGSU'11</div>
-                        </div>
-                        <div className="profile-info-site row">
-                            <div className="text-about">Website:</div>
-                            <div className="text-value">https://github.com/bakunovdo</div>
-                        </div>
+                        <ProfileStatusWithHooks isLoading={props.isLoading} status={props?.status || ''} updateStatus={props.updateStatus} />
+                    </div>
+
+                    <div className="editProfile">
+                        <button>Edit Profile</button>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }
-
-export default ProfilePerson

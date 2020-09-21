@@ -1,5 +1,4 @@
-export const SEND_MESSAGE = "SEND_MESSAGE"
-export const CHANGE_TEXT_MESSAGE = "CHANGE_TEXT_MESSAGE"
+export const SEND_MESSAGE = "dialogs/SEND_MESSAGE"
 
 let initialState = {
   dialogs: [
@@ -12,8 +11,7 @@ let initialState = {
     {id: 2, message: "Who are you?", me: 1},
     {id: 3, message: "Masterskay IT", me: 0},
     {id: 4, message: "Super socialNetwork!!", me: 0}
-  ],
-  inputMessage: "hey yo yo"
+  ]
 }
 
 const dialogsPageReducer = (state = initialState, action) => {
@@ -26,9 +24,6 @@ const dialogsPageReducer = (state = initialState, action) => {
         me: lastMessage.id % 2
       }
       return {...state, messages: [...state.messages, newMessage]}
-    }
-    case CHANGE_TEXT_MESSAGE: {
-      return {...state, inputMessage: action.data.message}
     }
     default: return state
   }

@@ -1,50 +1,51 @@
 import React from "react"
 
-import s from "./UserItem.module.scss"
-import IconAddUser from "../../../assets/images/addUser";
-import IconRemoveUser from "../../../assets/images/removeUser";
-import avatarPlaceholder from "../../../assets/images/avatar.png"
+import {NavLink} from "react-router-dom";
+
+import "./UserItem.scss";
+import userPlaceholder from "../../../assets/images/userPlaceholder.jpg"
+
+import classNames from 'classnames'
 
 const UserItem = (props) => {
-  const onToggleFollow = () => {
-    props.toggleFollow(props.id)
-  }
 
-  return (
-      <div className={s.userItem}>
-        <div className={s.avatar}>
-          {
-            // <img src={`https://picsum.photos/96?random=${props.id}`} alt="avatar"/>
-            //   <IconUserPlaceholder />
-            <img src={props.photoS ? props.photoS : avatarPlaceholder} alt="avatar"/>
-          }
+    const onToggleFollow = () => {
+        props.toggleFollowThunk(props.followed, props.id)
+    }
+
+
+    const btnFollow = classNames({
+        'follow': !props.followed,
+        'unfollow': props.followed,
+        "inFollowing": props.nowFollowingUsers.some(id => id === props.id),
+    })
+
+    const userPhoto = props.photo.small || props.photo.large || userPlaceholder
+
+    return (
+        <div className="userItem">
+            <div className="userItem__inner">
+                <div className="userItem-header">
+                    <div className="profile-thumb">
+                        <img src={userPhoto} alt="avatar"/>
+                    </div>
+
+                    <div className="profile-name">
+                        <NavLink to={`/profile/${props.id}`}>
+                            {props.fullName}
+                        </NavLink>
+                    </div>
+                </div>
+
+                <div className="footer">
+                    <button className={btnFollow} onClick={onToggleFollow}
+                    >
+                        {props.followed ? "Unfollow" : "Follow"}
+                    </button>
+                </div>
+            </div>
         </div>
-
-        <div className={s.header}>
-          <div className={s.info}>
-            <div className={s.name}>
-              {props.fullName}
-            </div>
-            <div className={s.status}>
-              {props.status}
-            </div>
-
-            <div className={s.city}>
-              {/*{props.location.city + ", " + props.location.country}*/}
-            </div>
-          </div>
-
-          <div className={s.controls}>
-            <div className={s.iconAddUser}>
-              {props.followed ? <IconRemoveUser size={24} color="red" /> : <IconAddUser size={24} color={"green"} />}
-            </div>
-            <button className={props.followed ? s.unfollow : s.follow } onClick={onToggleFollow}>
-              {props.followed ? "Unfollow" : "Follow"}
-            </button>
-          </div>
-        </div>
-      </div>
-  )
+    )
 }
 
 export default UserItem
