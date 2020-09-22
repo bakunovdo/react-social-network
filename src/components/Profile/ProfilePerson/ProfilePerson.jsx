@@ -2,8 +2,6 @@ import React from 'react';
 
 import "./ProfilePerson.scss";
 
-// import ProfileStatus from "./ProfileStatus/ProfileStatus";
-
 import Skeleton from "@material-ui/lab/Skeleton";
 import userPlaceholder from "../../../assets/images/userPlaceholder.jpg";
 import ProfileStatusWithHooks from "./ProfileStatus/ProfileStatusWithHooks";
@@ -20,7 +18,7 @@ export const ProfilePerson = (props) => {
         <div className="container profile-person">
             <div className="profile-person__header">
                 <div className="profile-person__picture">
-                    {props.isLoading ? <Skeleton variant="circle" width={150} height={150}/>
+                    {props.isLoading ? <Skeleton variant="circle" width={175} height={175}/>
                         : <img src={isPhoto} alt="profile_pic"/>}
                 </div>
 
