@@ -12,9 +12,9 @@ import SignIn from "./components/Login/SignIn";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 
-
 import {connect} from "react-redux";
 import {initializeApp} from "./redux/appReducer";
+
 
 class App extends React.Component {
     componentDidMount() {

@@ -40,7 +40,7 @@ const Users = (props) => {
                     <div className="profile-person__header">
 
                         <div className="profile-person__picture">
-                            {isLoading ? <Skeleton variant="circle" width={150} height={150}/>
+                            {isLoading ? <Skeleton variant="circle" width={175} height={175}/>
                                 : <img src={props.user.photos.large} alt="profile_pic"/>}
                         </div>
 

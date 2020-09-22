@@ -23,8 +23,6 @@ body {
     color: #444444;
 
     background: var(--background-default);
-    height: 100vh;
-
 }
 
 *, *:after, *:before {
